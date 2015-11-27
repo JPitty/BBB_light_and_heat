@@ -1,0 +1,17 @@
+this builds the dtbo file
+dtc -O dtb -o w1-00A0.dtbo -b 0 -@ w1.dts
+then copied to /lib/firmware
+
+the device tree overlay has to be loaded with:
+echo w1 > /sys/devices/bone_capemgr.9/slots
+or
+sudo sh -c “echo w1 > /sys/devices/bone_capemgr.9/slots
+which can be added to rc.local to start after boot
+
+sensors are located at
+/sys/devices/w1_bus_master1/28...
+
+cat w1_slave to get reading
+
+data line should be pulled up w/ 4k7 resistor
+gang like lines together for multiple sensors
