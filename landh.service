@@ -1,0 +1,12 @@
+[Unit]
+Description=BBB light and heat service
+#After=
+
+[Service]
+Type=simple
+#ExecStart= .../light.py
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
