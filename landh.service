@@ -4,7 +4,7 @@ Description=BBB light and heat service
 
 [Service]
 Type=simple
-#ExecStart= .../light.py
+ExecStart= /home/lauren/light.py
 Restart=always
 RestartSec=30
 
